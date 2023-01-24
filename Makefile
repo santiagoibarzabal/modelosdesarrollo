@@ -18,6 +18,10 @@ build:
 		--target production-build-stage\
 		-f Dockerfile .
 
+# Run tests
+tests:
+	npm run test
+
 # Clean the container image
 clean:
 	docker rmi -f ${APP_NAME}
@@ -27,3 +31,5 @@ run:
 	docker run -d -it -p 3000:3000 ${APP_NAME}
 
 all: build
+
+
